@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3DCE059D1FDAEF9A00E8A1C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE059C1FDAEF9A00E8A1C6 /* AppDelegate.swift */; };
-		3DCE059F1FDAEF9A00E8A1C6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE059E1FDAEF9A00E8A1C6 /* FirstViewController.swift */; };
 		3DCE05A11FDAEF9A00E8A1C6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE05A01FDAEF9A00E8A1C6 /* SecondViewController.swift */; };
 		3DCE05A41FDAEF9A00E8A1C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DCE05A21FDAEF9A00E8A1C6 /* Main.storyboard */; };
 		3DCE05A61FDAEF9A00E8A1C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DCE05A51FDAEF9A00E8A1C6 /* Assets.xcassets */; };
@@ -19,6 +18,10 @@
 		3DCE05D11FDAF09300E8A1C6 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DCE05CF1FDAF09300E8A1C6 /* SwiftyJSON.framework */; };
 		3DCE05D21FDAF0A100E8A1C6 /* Alamofire.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DCE05CE1FDAF09300E8A1C6 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3DCE05D31FDAF0A100E8A1C6 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DCE05CF1FDAF09300E8A1C6 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3DFEF9121FDB363B00B3847A /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFEF9111FDB363B00B3847A /* TasksTableViewController.swift */; };
+		3DFEF9141FDB369000B3847A /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFEF9131FDB369000B3847A /* TaskViewController.swift */; };
+		3DFEF9161FDB379000B3847A /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFEF9151FDB379000B3847A /* Task.swift */; };
+		3DFEF9181FDB39CF00B3847A /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFEF9171FDB39CF00B3847A /* TasksTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +58,6 @@
 /* Begin PBXFileReference section */
 		3DCE05991FDAEF9A00E8A1C6 /* desk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCE059C1FDAEF9A00E8A1C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3DCE059E1FDAEF9A00E8A1C6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		3DCE05A01FDAEF9A00E8A1C6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3DCE05A31FDAEF9A00E8A1C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DCE05A51FDAEF9A00E8A1C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +71,10 @@
 		3DCE05C01FDAEF9A00E8A1C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DCE05CE1FDAF09300E8A1C6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		3DCE05CF1FDAF09300E8A1C6 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		3DFEF9111FDB363B00B3847A /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		3DFEF9131FDB369000B3847A /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		3DFEF9151FDB379000B3847A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		3DFEF9171FDB39CF00B3847A /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,9 +129,12 @@
 			isa = PBXGroup;
 			children = (
 				3DCE059C1FDAEF9A00E8A1C6 /* AppDelegate.swift */,
-				3DCE059E1FDAEF9A00E8A1C6 /* FirstViewController.swift */,
 				3DCE05A01FDAEF9A00E8A1C6 /* SecondViewController.swift */,
 				3DCE05A21FDAEF9A00E8A1C6 /* Main.storyboard */,
+				3DFEF9111FDB363B00B3847A /* TasksTableViewController.swift */,
+				3DFEF9151FDB379000B3847A /* Task.swift */,
+				3DFEF9131FDB369000B3847A /* TaskViewController.swift */,
+				3DFEF9171FDB39CF00B3847A /* TasksTableViewCell.swift */,
 				3DCE05A51FDAEF9A00E8A1C6 /* Assets.xcassets */,
 				3DCE05A71FDAEF9A00E8A1C6 /* LaunchScreen.storyboard */,
 				3DCE05AA1FDAEF9A00E8A1C6 /* Info.plist */,
@@ -295,9 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DFEF9181FDB39CF00B3847A /* TasksTableViewCell.swift in Sources */,
+				3DFEF9121FDB363B00B3847A /* TasksTableViewController.swift in Sources */,
+				3DFEF9141FDB369000B3847A /* TaskViewController.swift in Sources */,
+				3DFEF9161FDB379000B3847A /* Task.swift in Sources */,
 				3DCE05A11FDAEF9A00E8A1C6 /* SecondViewController.swift in Sources */,
 				3DCE059D1FDAEF9A00E8A1C6 /* AppDelegate.swift in Sources */,
-				3DCE059F1FDAEF9A00E8A1C6 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
