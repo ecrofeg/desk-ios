@@ -21,7 +21,11 @@ class TasksTableViewController: UITableViewController {
                     let tasks = JSON(value)["tasks"].dictionary!
                     
                     for (key, value) in tasks {
-                        self.tasks.append(Task(id: Int(key)!, title: value["name"].string!))
+                        let id = Int(key)!
+                        let title = value["name"].string!
+                        let description = value["description"].string!
+                        
+                        self.tasks.append(Task(id: id, title: title, description: description))
                     }
                 
                     self.tableView.reloadData()
@@ -80,7 +84,7 @@ class TasksTableViewController: UITableViewController {
         let task = tasks[indexPath.row]
 
         cell.title.text = "\(task.id): \(task.title)"
-        cell.shortDescription.text = "Some short description"
+        cell.shortDescription.text = task.description
 
         return cell
     }
