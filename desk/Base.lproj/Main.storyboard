@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tasks Table View Controller-->
+        <!--Dashboard-->
         <scene sceneID="JsI-B5-HKe">
             <objects>
                 <tableViewController id="iF6-bM-PWJ" customClass="TasksTableViewController" customModule="desk" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                             <outlet property="delegate" destination="iF6-bM-PWJ" id="eDa-yp-AiW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="A3G-e6-TpD"/>
+                    <navigationItem key="navigationItem" title="Dashboard" largeTitleDisplayMode="always" id="A3G-e6-TpD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38i-Dv-BuB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

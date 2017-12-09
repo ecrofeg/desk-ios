@@ -1,11 +1,3 @@
-//
-//  TaskViewController.swift
-//  desk
-//
-//  Created by Павел Наумов on 09/12/2017.
-//  Copyright © 2017 pnaumov. All rights reserved.
-//
-
 import UIKit
 
 class TaskViewController: UIViewController {
@@ -14,15 +6,10 @@ class TaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = task.title
+        
+        navigationItem.title = task.title
+        navigationItem.largeTitleDisplayMode = .never
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

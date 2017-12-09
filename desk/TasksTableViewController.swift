@@ -1,11 +1,3 @@
-//
-//  TasksTableViewController.swift
-//  desk
-//
-//  Created by Павел Наумов on 09/12/2017.
-//  Copyright © 2017 pnaumov. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -17,26 +9,35 @@ class TasksTableViewController: UITableViewController {
     private func loadTasks() {
         Alamofire.request("http://localhost:5555/api/task?assignee_id=1").responseJSON { response in
             switch response.result {
-                case .success(let value):
-                    let tasks = JSON(value)["tasks"].dictionary!
+            case .success(let value):
+                let tasks = JSON(value)["tasks"].dictionary!
+                var tasksArray = [Task]()
+                
+                for (key, value) in tasks {
+                    let task = Task(
+                        id: Int(key)!,
+                        title: value["name"].string!,
+                        description: value["description"].string!,
+                        priority: value["priority"].int!,
+                        createdAt: value["created_at"].string!,
+                        updatedAt: value["updated_at"].string!
+                    )
                     
-                    for (key, value) in tasks {
-                        let id = Int(key)!
-                        let title = value["name"].string!
-                        let description = value["description"].string!
-                        
-                        self.tasks.append(Task(id: id, title: title, description: description))
-                    }
+                    tasksArray.append(task)
+                }
                 
-                    self.tableView.reloadData()
+                tasksArray.sort { return $0.priority > $1.priority }
                 
-                case .failure(let error):
-                    print(error)
+                self.tasks = tasksArray
+            
+                // Re-render table's content
+                self.tableView.reloadData()
+            
+            case .failure(let error):
+                print(error)
             }
         }
     }
-    
-    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ViewTask" {
@@ -52,21 +53,16 @@ class TasksTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Show large iOS 11 like titles
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        // Append Search Bar and preserve it visible
+        navigationItem.searchController = UISearchController(searchResultsController: nil)
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        // Load tasks for current user and reload the table view
         loadTasks()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -82,46 +78,11 @@ class TasksTableViewController: UITableViewController {
         }
         
         let task = tasks[indexPath.row]
-
+        
+        // Fill the cell with task data
         cell.title.text = "\(task.id): \(task.title)"
         cell.shortDescription.text = task.description
 
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 }
