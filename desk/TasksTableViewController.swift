@@ -9,33 +9,38 @@ class TasksTableViewController: UITableViewController {
     private func loadTasks() {
         Alamofire.request("http://localhost:5555/api/task?assignee_id=1").responseJSON { response in
             switch response.result {
-            case .success(let value):
-                let tasks = JSON(value)["tasks"].dictionary!
-                var tasksArray = [Task]()
-                
-                for (key, value) in tasks {
-                    let task = Task(
-                        id: Int(key)!,
-                        title: value["name"].string!,
-                        description: value["description"].string!,
-                        priority: value["priority"].int!,
-                        createdAt: value["created_at"].string!,
-                        updatedAt: value["updated_at"].string!
-                    )
+                case .success(let value):
+                    guard let tasks = JSON(value)["tasks"].dictionary else {
+                        return
+                    }
+
+                    var tasksArray = [Task]()
                     
-                    tasksArray.append(task)
+                    for (_, taskJSON) in tasks {
+                        let task = Task(
+                            id: taskJSON["id"].int!,
+                            title: taskJSON["name"].string!,
+                            description: taskJSON["description"].string!,
+                            priority: taskJSON["priority"].int!,
+                            createdAt: taskJSON["created_at"].string!,
+                            updatedAt: taskJSON["updated_at"].string!
+                        )
+                        
+                        tasksArray.append(task)
+                    }
+                    
+                    // Sort tasks by priority
+                    tasksArray.sort { return $0.priority > $1.priority }
+                    
+                    // Store sorted tasks
+                    self.tasks = tasksArray
+                
+                    // Re-render table's content
+                    self.tableView.reloadData()
+                
+                case .failure(let error):
+                    print(error)
                 }
-                
-                tasksArray.sort { return $0.priority > $1.priority }
-                
-                self.tasks = tasksArray
-            
-                // Re-render table's content
-                self.tableView.reloadData()
-            
-            case .failure(let error):
-                print(error)
-            }
         }
     }
     
