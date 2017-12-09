@@ -1,24 +1,37 @@
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class TaskViewController: UIViewController {
     
-    public var task: Task!
+    public var taskId: Int!
+    private var task: Task?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = task.title
         navigationItem.largeTitleDisplayMode = .never
+        
+        Alamofire.request("http://localhost:5555/api/task/\(self.taskId!)").responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let tasks = JSON(value)["tasks"].dictionary!
+                
+                if let task = tasks[String(self.taskId)] {
+                    self.task = Task(
+                        id: task["id"].int!,
+                        title: task["name"].string!,
+                        description: task["description"].string!,
+                        priority: task["priority"].int!,
+                        createdAt: task["created_at"].string!,
+                        updatedAt: task["updated_at"].string!
+                    )
+                    
+                    self.navigationItem.title = task["name"].string!
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

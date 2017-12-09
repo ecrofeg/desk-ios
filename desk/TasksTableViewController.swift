@@ -43,9 +43,7 @@ class TasksTableViewController: UITableViewController {
         if segue.identifier == "ViewTask" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let controller = segue.destination as! TaskViewController
-                let task = tasks[indexPath.row]
-                
-                controller.task = task
+                controller.taskId = tasks[indexPath.row].id
             }
         }
     }
