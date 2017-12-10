@@ -6,10 +6,6 @@ class TaskViewController: UIViewController {
     
     public var taskId: Int?
     private var task: Task?
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationItem.title = "..."
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

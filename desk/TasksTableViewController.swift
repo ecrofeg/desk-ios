@@ -34,6 +34,18 @@ class TasksTableViewController: UITableViewController {
                     
                     // Store sorted tasks
                     self.tasks = tasksArray
+                    
+                    // Draw tab bar item badge with number of tasks assigned to the current user
+                    if (tasksArray.count > 0) {
+                        if let barItems = self.tabBarController?.tabBar.items {
+                            for item in barItems {
+                                if item.title == "Dashboard" {
+                                    item.badgeValue = String(tasksArray.count)
+                                    break
+                                }
+                            }
+                        }
+                    }
                 
                     // Re-render table's content
                     self.tableView.reloadData()
@@ -49,6 +61,7 @@ class TasksTableViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let controller = segue.destination as! TaskViewController
                 controller.taskId = tasks[indexPath.row].id
+                controller.title = tasks[indexPath.row].title
             }
         }
     }
