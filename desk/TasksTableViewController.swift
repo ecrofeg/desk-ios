@@ -39,7 +39,7 @@ class TasksTableViewController: UITableViewController {
                     if (tasksArray.count > 0) {
                         if let barItems = self.tabBarController?.tabBar.items {
                             for item in barItems {
-                                if item.title == "Dashboard" {
+                                if item.title == "Tasks" {
                                     item.badgeValue = String(tasksArray.count)
                                     break
                                 }
