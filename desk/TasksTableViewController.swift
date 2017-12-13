@@ -2,9 +2,30 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+@IBDesignable
 class TasksTableViewController: UITableViewController {
-    
     private var tasks = [Task]()
+    
+    @IBAction func showActionSheet(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController()
+        
+        alert.addAction(UIAlertAction(title: "New Task", style: .default, handler: { _ in
+            if let storyboard = self.storyboard {
+                let viewController = storyboard.instantiateViewController(withIdentifier: "NewTaskPopoverViewControllerID")
+                self.present(viewController, animated: true, completion: nil)
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "New Project", style: .default, handler: { _ in
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            alert.dismiss(animated: true)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     
     private func loadTasks() {
         Alamofire.request("http://localhost:5555/api/task?assignee_id=1").responseJSON { response in

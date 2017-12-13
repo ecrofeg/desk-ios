@@ -3,7 +3,6 @@ import Alamofire
 import SwiftyJSON
 
 class TaskViewController: UIViewController {
-    
     public var taskId: Int?
     private var task: Task?
 
