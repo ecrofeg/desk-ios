@@ -23,8 +23,10 @@ class NewProjectViewController: UIViewController {
                 case .success(_):
                     self.dismiss(animated: true)
                 
-                case .failure(let error):
-                    print(error)
+                case .failure(_):
+                    let alert = UIAlertController(title: "An error occured", message: "Something went wrong! Please, try again.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
             }
         }
     }
