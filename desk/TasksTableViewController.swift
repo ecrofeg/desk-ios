@@ -17,7 +17,10 @@ class TasksTableViewController: UITableViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "New Project", style: .default, handler: { _ in
-            
+            if let storyboard = self.storyboard {
+                let viewController = storyboard.instantiateViewController(withIdentifier: "NewProjectPopover")
+                self.present(viewController, animated: true, completion: nil)
+            }
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in

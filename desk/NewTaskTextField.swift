@@ -14,6 +14,7 @@ class NewTaskTextField: UITextField {
         layer.shadowOpacity = 0
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.addSublayer(border)
+        layer.masksToBounds = true
     }
     
     private func getNewBounds(bounds: CGRect) -> CGRect {
