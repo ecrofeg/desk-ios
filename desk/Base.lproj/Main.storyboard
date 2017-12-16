@@ -23,11 +23,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" textLabel="sgs-cb-uVq" detailTextLabel="VsB-wp-xg9" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="3VA-bC-wBE" customClass="TasksTableViewCell" customModule="desk" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="sgs-cb-uVq" detailTextLabel="VsB-wp-xg9" rowHeight="54" style="IBUITableViewCellStyleSubtitle" id="3VA-bC-wBE" customClass="TasksTableViewCell" customModule="desk" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3VA-bC-wBE" id="3BW-DH-eiX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="53.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sgs-cb-uVq">
@@ -113,7 +113,7 @@
                                                 <rect key="frame" x="198" y="0.0" width="162" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -175,7 +175,13 @@
                             <outlet property="delegate" destination="YwR-Az-nLa" id="mYQ-g8-GxR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Project" id="LUJ-zw-bu6"/>
+                    <navigationItem key="navigationItem" title="Project" id="LUJ-zw-bu6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="j6C-zd-R7A">
+                            <connections>
+                                <action selector="cancel:" destination="YwR-Az-nLa" id="gc8-aR-DYb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfW-kx-nzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
