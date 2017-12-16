@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D0B186C1FE46C2B007E6A3D /* NewProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B186B1FE46C2B007E6A3D /* NewProjectViewController.swift */; };
-		3D392C451FE1D8DE008AB28E /* NewTaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D392C441FE1D8DE008AB28E /* NewTaskTextField.swift */; };
+		3D1B145A1FE5715C00733E89 /* SelectProjectTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B14591FE5715C00733E89 /* SelectProjectTableViewController.swift */; };
+		3D1B145C1FE571E000733E89 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B145B1FE571E000733E89 /* Project.swift */; };
 		3DB840881FDDA38E0056509E /* NewTaskPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB840871FDDA38E0056509E /* NewTaskPopoverViewController.swift */; };
 		3DCE059D1FDAEF9A00E8A1C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE059C1FDAEF9A00E8A1C6 /* AppDelegate.swift */; };
 		3DCE05A11FDAEF9A00E8A1C6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE05A01FDAEF9A00E8A1C6 /* SecondViewController.swift */; };
@@ -60,7 +61,8 @@
 
 /* Begin PBXFileReference section */
 		3D0B186B1FE46C2B007E6A3D /* NewProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewController.swift; sourceTree = "<group>"; };
-		3D392C441FE1D8DE008AB28E /* NewTaskTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskTextField.swift; sourceTree = "<group>"; };
+		3D1B14591FE5715C00733E89 /* SelectProjectTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProjectTableViewController.swift; sourceTree = "<group>"; };
+		3D1B145B1FE571E000733E89 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		3DB840871FDDA38E0056509E /* NewTaskPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskPopoverViewController.swift; sourceTree = "<group>"; };
 		3DCE05991FDAEF9A00E8A1C6 /* desk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DCE059C1FDAEF9A00E8A1C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,9 +141,10 @@
 				3DCE05A21FDAEF9A00E8A1C6 /* Main.storyboard */,
 				3DB840871FDDA38E0056509E /* NewTaskPopoverViewController.swift */,
 				3D0B186B1FE46C2B007E6A3D /* NewProjectViewController.swift */,
-				3D392C441FE1D8DE008AB28E /* NewTaskTextField.swift */,
 				3DFEF9111FDB363B00B3847A /* TasksTableViewController.swift */,
+				3D1B14591FE5715C00733E89 /* SelectProjectTableViewController.swift */,
 				3DFEF9151FDB379000B3847A /* Task.swift */,
+				3D1B145B1FE571E000733E89 /* Project.swift */,
 				3DFEF9131FDB369000B3847A /* TaskViewController.swift */,
 				3DFEF9171FDB39CF00B3847A /* TasksTableViewCell.swift */,
 				3DCE05A51FDAEF9A00E8A1C6 /* Assets.xcassets */,
@@ -316,12 +319,13 @@
 				3DFEF9181FDB39CF00B3847A /* TasksTableViewCell.swift in Sources */,
 				3D0B186C1FE46C2B007E6A3D /* NewProjectViewController.swift in Sources */,
 				3DFEF9121FDB363B00B3847A /* TasksTableViewController.swift in Sources */,
+				3D1B145C1FE571E000733E89 /* Project.swift in Sources */,
 				3DFEF9141FDB369000B3847A /* TaskViewController.swift in Sources */,
+				3D1B145A1FE5715C00733E89 /* SelectProjectTableViewController.swift in Sources */,
 				3DFEF9161FDB379000B3847A /* Task.swift in Sources */,
 				3DCE05A11FDAEF9A00E8A1C6 /* SecondViewController.swift in Sources */,
 				3DB840881FDDA38E0056509E /* NewTaskPopoverViewController.swift in Sources */,
 				3DCE059D1FDAEF9A00E8A1C6 /* AppDelegate.swift in Sources */,
-				3D392C451FE1D8DE008AB28E /* NewTaskTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

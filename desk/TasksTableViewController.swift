@@ -76,7 +76,7 @@ class TasksTableViewController: UITableViewController {
                 
                 case .failure(let error):
                     print(error)
-                }
+            }
         }
     }
     
